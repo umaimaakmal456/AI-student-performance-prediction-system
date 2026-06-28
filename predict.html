@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-8 max-w-4xl mx-auto">
+    <header class="mb-8">
+        <h2 class="text-3xl font-bold text-slate-800">New Prediction</h2>
+        <p class="text-slate-500 mt-1">Submit your latest metrics to generate an updated 7-day algorithmic timetable.</p>
+    </header>
+
+    {% if error %}
+        <div class="bg-red-50 text-red-600 p-4 rounded-lg mb-6 shadow-sm border border-red-100 font-medium">{{ error }}</div>
+    {% endif %}
+
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+        <form method="POST" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Study Hours Per Day</label>
+                    <input type="number" name="study_hours" min="0" max="24" step="0.5" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Attendance Percentage</label>
+                    <input type="number" name="attendance" min="0" max="100" step="1" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Previous Score Percentage</label>
+                    <input type="number" name="previous_score" min="0" max="100" step="1" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Sleep Hours</label>
+                    <input type="number" name="sleep_hours" min="0" max="24" step="0.5" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Assignments Completed %</label>
+                    <input type="number" name="assignments_completed" min="0" max="100" step="1" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Class Participation /10</label>
+                    <input type="number" name="participation" min="0" max="10" step="1" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Parental Support /10</label>
+                    <input type="number" name="parental_support" min="0" max="10" step="1" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Internet Access</label>
+                    <select name="internet_access" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <!-- Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Extra Classes</label>
+                    <select name="extra_classes" required class="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100">
+                <button type="submit" class="w-full py-4 bg-blue-600 text-white rounded-xl text-lg font-bold hover:bg-blue-700 shadow-md transition flex items-center justify-center">
+                    Generate Timetable & Predict Score
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

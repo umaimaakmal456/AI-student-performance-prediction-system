@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Banner -->
+<div class="bg-blue-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20">
+        <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">Academic Innovation Project</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">About EduPredict AI</h1>
+        <p class="text-blue-200 text-lg sm:text-xl max-w-3xl leading-relaxed">
+            An intelligent Personal Academic Assistant designed to shift educational technology from passive monitoring
+            to proactive, data-driven student intervention.
+        </p>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+
+    <!-- ────────────────────────────────────────────── -->
+    <!-- Section 1: Project Mission                     -->
+    <!-- ────────────────────────────────────────────── -->
+    <section id="mission">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-1 h-8 bg-blue-900 rounded-full"></div>
+            <h2 class="text-2xl font-bold text-slate-900">Project Mission</h2>
+        </div>
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+            <p class="text-slate-600 text-lg leading-relaxed mb-4">
+                Traditional educational technology has long been confined to a reactive role — logging grades, recording
+                attendance, and presenting historical data to students after the damage has already been done. <strong
+                    class="text-slate-800">EduPredict AI</strong> was developed to fundamentally challenge this
+                paradigm.
+            </p>
+            <p class="text-slate-600 text-lg leading-relaxed mb-4">
+                The system's core mission is to enable <em>proactive intervention</em>: to analyze a student's current
+                academic and lifestyle metrics in real time and generate an optimized, actionable plan <em>before</em>
+                performance degrades. By leveraging machine learning, the assistant predicts academic outcomes and
+                immediately scaffolds a personalized 7-day study schedule that prioritizes cognitive health — enforcing
+                adequate sleep, distributing deep-work sessions using the Pomodoro technique, and ensuring time for rest
+                and recovery.
+            </p>
+            <p class="text-slate-600 text-lg leading-relaxed">
+                Beyond prediction, EduPredict AI aims to prevent burnout — a leading cause of academic failure — by
+                intelligently balancing study load against biological needs, ensuring students remain consistent,
+                focused, and motivated throughout their academic journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────── -->
+    <!-- Section 2: Technical Architecture             -->
+    <!-- ────────────────────────────────────────────── -->
+    <section id="architecture">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-1 h-8 bg-blue-900 rounded-full"></div>
+            <h2 class="text-2xl font-bold text-slate-900">Technical Architecture</h2>
+        </div>
+        <p class="text-slate-600 mb-8 text-base leading-relaxed">
+            EduPredict AI is built on a lean, portable, and fully open-source technology stack, designed to run as a
+            standalone application with zero external service dependencies.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Card: Backend -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">Backend & Routing</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Built with <strong>Python 3</strong> and the
+                        <strong>Flask</strong> microframework. Application logic is organized via Flask Blueprints, and
+                        authentication is managed through server-side sessions with Werkzeug password hashing.</p>
+                </div>
+            </div>
+
+            <!-- Card: ML -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">Machine Learning Engine</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Powered by <strong>Scikit-Learn</strong>,
+                        utilizing a tuned <strong>Random Forest Regressor</strong> optimized via GridSearchCV with
+                        5-fold cross-validation. The model analyzes <strong>9 distinct student metrics</strong> to
+                        predict a final performance score. Input features are normalized using a StandardScaler
+                        pipeline.</p>
+                </div>
+            </div>
+
+            <!-- Card: Database -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582 4 8 4s8 1.79 8 4" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">Database Layer</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Utilizes <strong>SQLite</strong> — a fully
+                        portable, file-based relational database — accessed through the
+                        <strong>Flask-SQLAlchemy</strong> ORM. This design requires no database server, making the
+                        system trivially deployable and migratable across machines.</p>
+                </div>
+            </div>
+
+            <!-- Card: Frontend -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base mb-1">Frontend & UI</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Server-side rendered <strong>Jinja2 HTML
+                            templates</strong> styled with <strong>Tailwind CSS</strong> via CDN, requiring no build
+                        step. Dynamic data visualizations are rendered client-side using <strong>Chart.js</strong>, and
+                        Markdown notes are processed server-side with the <strong>Python Markdown</strong> library.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────── -->
+    <!-- Section 3: Core Modules                        -->
+    <!-- ────────────────────────────────────────────── -->
+    <section id="modules">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-1 h-8 bg-blue-900 rounded-full"></div>
+            <h2 class="text-2xl font-bold text-slate-900">Core System Pillars</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Pillar 1 -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex items-start gap-5">
+                <div class="flex-shrink-0 text-3xl">📊</div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Predictive Analytics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The ML engine accepts nine student input parameters — including study hours, attendance, sleep
+                        quality, assignment completion rate, class participation, and parental support — and returns a
+                        continuous predicted final score alongside a categorical performance label (Low, Average, Good,
+                        Excellent). Every prediction is persisted to the database and visualized as a longitudinal trend
+                        line on the dashboard, enabling students to track their improvement over time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex items-start gap-5">
+                <div class="flex-shrink-0 text-3xl">🗓️</div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Algorithmic Timetable Generation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        When a student's predicted score falls below 75%, or when key input metrics indicate risk (e.g.,
+                        low attendance or insufficient study hours), the system automatically generates a personalized
+                        <strong>7-day timetable</strong>. The scheduling algorithm operates using a strict datetime
+                        cursor — advancing block-by-block — to produce a chronologically ordered 24-hour day that
+                        mandates <strong>8 consecutive hours of sleep</strong>, allocates time for meals, and
+                        distributes targeted <strong>Deep Study sessions</strong> using the <strong>Pomodoro technique
+                            (50 minutes focused work / 10 minutes rest)</strong>. High-performers (score &gt; 85%) are
+                        also allocated leisure and recovery time to prevent burnout.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex items-start gap-5">
+                <div class="flex-shrink-0 text-3xl">📒</div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Unified Study Vault</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        The Study Vault is a context-aware, Markdown-based note-taking system embedded directly in the
+                        dashboard. Notes can be written in standard Markdown syntax and optionally linked to a specific
+                        timetable block via a Foreign Key relationship in the database. This allows students to attach
+                        reading summaries, formulas, or task notes directly to the corresponding scheduled activity.
+                        Saved notes are rendered as formatted HTML in real time, providing a clean and readable
+                        knowledge repository.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────── -->
+    <!-- Section 4: Project Credits                     -->
+    <!-- ────────────────────────────────────────────── -->
+    <section id="credits">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-1 h-8 bg-blue-900 rounded-full"></div>
+            <h2 class="text-2xl font-bold text-slate-900">Project Credits</h2>
+        </div>
+        <div class="bg-blue-900 rounded-2xl p-8 text-white">
+            <p class="text-blue-200 text-sm mb-8 max-w-2xl">
+                EduPredict AI was developed as a Final Year Computer Science Project, designed to demonstrate the
+                practical application of machine learning, relational databases, and modern web engineering within an
+                academic context.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-white/10 rounded-xl p-6 border border-white/20">
+                    <p class="text-blue-300 text-xs font-semibold uppercase tracking-wider mb-2">Lead Developer /
+                        Engineer</p>
+                    <p class="text-white text-2xl font-bold">Umaima Akmal</p>
+                    <p class="text-blue-200 text-sm mt-1">BSc Computer Science — Final Year</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-6 border border-white/20">
+                    <p class="text-blue-300 text-xs font-semibold uppercase tracking-wider mb-2">Project Supervisor</p>
+                    <p class="text-white text-2xl font-bold">Dr. Shahid Fareeed</p>
+                    <p class="text-blue-200 text-sm mt-1">Department of Computer Science</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <div class="border-t border-slate-200 pt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-500 text-sm">&copy; {{ 2026 }} EduPredict AI. Final Year University Project.</p>
+        <div class="flex gap-4">
+            <a href="{{ url_for('main.home') }}"
+                class="text-sm text-slate-600 hover:text-blue-900 font-medium transition">Home</a>
+            {% if session.get('logged_in') %}
+            <a href="{{ url_for('main.dashboard') }}"
+                class="text-sm text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800 font-medium transition">Go to
+                Dashboard</a>
+            {% else %}
+            <a href="{{ url_for('main.register') }}"
+                class="text-sm text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800 font-medium transition">Get
+                Started</a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
